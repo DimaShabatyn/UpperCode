@@ -11,11 +11,14 @@ const movies = [
 ]
 
 // 1. масив з унікальними режисерами
-const directors = movies
-.filter((item, index, array) => array
-.findIndex((movie, ind, arr) => movie.director === item.director) === index)
-.map(item => item.director);
-console.log(directors);
+// const directors = movies
+// .filter((item, index, array) => array
+// .findIndex((movie, ind, arr) => movie.director === item.director) === index)
+// .map(item => item.director);
+// console.log(directors);
+const allDirectors = movies.map(movie => movie.director)
+.filter((director, index, array) => 
+array.indexOf(director) === index);
 // 2. створюємо об"єкт
 const obj = {
 
