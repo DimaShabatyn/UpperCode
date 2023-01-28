@@ -22,13 +22,22 @@ array.indexOf(director) === index);
 // 2. створюємо об"єкт
 const obj = {
 
-};
-for (const director of directors) {
-  obj[director] = [];
-};
-console.log(obj);
-// 3. заповнюємо масив фільмами
-for (const {director, title} of movies) {
-obj[director].push(title);
-}
-console.log(obj);
+// };
+// for (const director of directors) {
+//   obj[director] = [];
+// };
+// console.log(obj);
+// // 3. заповнюємо масив фільмами
+// for (const {director, title} of movies) {
+// obj[director].push(title);
+// }
+// console.log(obj);
+
+//solution 2
+const obj = {};
+movies.forEach(({director, title}, index) => {
+  if (!obj[director]) {
+    obj[director] = [];
+  }
+  obj[director].push(title)
+})
