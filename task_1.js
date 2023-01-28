@@ -7,5 +7,8 @@
 const genres = ['Jazz', 'Blues', 'Rock n Roll', 'Reggae', 'Rap']
 
 function logItems(array) {
-  
+  for(let i=0, num=1; i<genres.length; i+=1, num+=1){
+    console.log(`${num} - ${genres[i]}`)
+  }
 }
+logItems(genres)
