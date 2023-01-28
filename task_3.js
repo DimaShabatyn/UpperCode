@@ -9,3 +9,23 @@ const movies = [
   {director: 'Quentin Tarantino', title: 'Inglorious Basterds'},
   {director: 'Martin Scorsese', title: 'Silence'}
 ]
+
+// 1. масив з унікальними режисерами
+const directors = movies
+.filter((item, index, array) => array
+.findIndex((movie, ind, arr) => movie.director === item.director) === index)
+.map(item => item.director);
+console.log(directors);
+// 2. створюємо об"єкт
+const obj = {
+
+};
+for (const director of directors) {
+  obj[director] = [];
+};
+console.log(obj);
+// 3. заповнюємо масив фільмами
+for (const {director, title} of movies) {
+obj[director].push(title);
+}
+console.log(obj);
