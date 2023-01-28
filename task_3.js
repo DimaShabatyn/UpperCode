@@ -27,7 +27,7 @@ const obj = {
 //   obj[director] = [];
 // };
 // console.log(obj);
-// // 3. заповнюємо масив фільмами
+// 3. заповнюємо масив фільмами
 // for (const {director, title} of movies) {
 // obj[director].push(title);
 // }
