@@ -10,22 +10,32 @@ const movies = [
   {director: 'Martin Scorsese', title: 'Silence'}
 ]
 
-// 1. масив з унікальними режисерами
-const directors = movies
-.filter((item, index, array) => array
-.findIndex((movie, ind, arr) => movie.director === item.director) === index)
-.map(item => item.director);
-console.log(directors);
-// 2. створюємо об"єкт
-const obj = {
+//solution 1
+// // 1. масив з унікальними режисерами
+// const directors = movies
+// .filter((item, index, array) => array
+// .findIndex((movie, ind, arr) => movie.director === item.director) === index)
+// .map(item => item.director);
+// console.log(directors);
+// // 2. створюємо об"єкт
+// const obj = {
 
-};
-for (const director of directors) {
-  obj[director] = [];
-};
-console.log(obj);
-// 3. заповнюємо масив фільмами
-for (const {director, title} of movies) {
-obj[director].push(title);
-}
-console.log(obj);
+// };
+// for (const director of directors) {
+//   obj[director] = [];
+// };
+// console.log(obj);
+// // 3. заповнюємо масив фільмами
+// for (const {director, title} of movies) {
+// obj[director].push(title);
+// }
+// console.log(obj);
+
+//solution 2
+const obj = {};
+movies.forEach(({director, title}, index) => {
+  if (!obj[director]) {
+    obj[director] = [];
+  }
+  obj[director].push(title)
+})
