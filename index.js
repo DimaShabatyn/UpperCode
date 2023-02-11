@@ -1,4 +1,10 @@
 //TODO:==============================================
+const alertBtn = document.querySelector('#alertButton');
+const alertInpt = document.querySelector('#alertInput');
+alertBtn.addEventListener('click', () => {
+    alert(alertInpt.value)
+})
+
 /*
 Завдання 1
 Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивіться на елементи в html-розмітці)
@@ -65,6 +71,22 @@ https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY
 */
 
 //TODO:==============================================
+const nameBtn = document.querySelector('#sortByNameButton');
+const lastnameBtn = document.querySelector('#sortByLastNameButton');
+const peopleList = document.querySelectorAll('.person');
+const peopleUl = document.querySelector('.people');
+const newArray = [];
+peopleList.forEach(item => newArray.push(item))
+
+nameBtn.addEventListener('click', () => {
+    newArray.sort((a,b) => a.innerHTML == b.innerHTML
+    ? 0
+    : (a.innerHTML > b.innerHTML ? 1 : -1));
+    console.log(newArray)
+    peopleUl.innerHTML = '';
+    newArray.forEach(el => peopleUl.append(el));
+});
+// lastnameBtn.addEventListener('click', );
 /*
 Завдання 10
 Наведено список студентів. Зробіть можливість сортування списку на ім'я та на прізвище.
