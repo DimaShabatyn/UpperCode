@@ -65,6 +65,15 @@ https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY
 */
 
 //TODO:==============================================
+const refs = {
+    formRef: document.querySelector('.checkboxForm'),
+}
+refs.formRef.addEventListener('submit', (e) => {
+e.preventDefault();
+console.log(e.target.elements)
+for(const el of e.target.elements){
+    if(el.checked) el.parentNode.remove();
+}})
 /*
 Завдання 9
 Видалити зі списку елементи, які позначені.
