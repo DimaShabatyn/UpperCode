@@ -18,6 +18,20 @@ alertBtn.addEventListener('click', () => {
 */
 
 //TODO:==============================================
+const passwordInputRef = document.querySelector('#passwordInput');
+const passwordBtnRef = document.querySelector('#passwordButton');
+
+passwordBtnRef.addEventListener('click', togglePassword);
+
+function togglePassword(event){
+    if(passwordBtnRef.textContent === 'Hide'){
+        passwordInputRef.type = 'password';
+        passwordBtnRef.textContent = 'Show';
+    } else if(passwordBtnRef.textContent === 'Show'){
+        passwordInputRef.type = 'text';
+        passwordBtnRef.textContent = 'Hide';
+    }
+}
 /*
 Завдання 3
 Кнопка "Приховати" ховає текст і замінює назву кнопки на
