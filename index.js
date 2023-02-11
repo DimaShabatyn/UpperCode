@@ -109,6 +109,22 @@ nameBtn.addEventListener('click', () => {
     peopleUl.innerHTML = '';
     newArray.forEach(el => peopleUl.append(el));
 });
+lastnameBtn.addEventListener('click', () => {
+    newArray.sort((a,b) => a.innerHTML.split(' ')[1] == b.innerHTML.split(' ')[1]
+    ? 0
+    : (a.innerHTML.split(' ')[1] > b.innerHTML.split(' ')[1] ? 1 : -1));
+    console.log(newArray)
+    newArray.forEach(el => {
+        console.log(el)
+        console.log(el.innerHTML)
+        console.log(el.innerHTML.split(' '))
+        console.log(el.innerHTML.split(' ')[1])
+    })
+    peopleUl.innerHTML = '';
+    newArray.forEach(el => peopleUl.append(el));
+});
+
+
 // lastnameBtn.addEventListener('click', );
 /*
 Завдання 10
