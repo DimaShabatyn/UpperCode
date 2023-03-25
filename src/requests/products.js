@@ -60,7 +60,7 @@ const updateProduct = async (id) => {
 
 const deleteProduct = async (id) => {
   const res = await apiInstance.delete(`/products/${id}`);
-  console.log(res.data);
+  return res.data;
 };
 
 export default {

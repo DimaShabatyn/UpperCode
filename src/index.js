@@ -59,6 +59,29 @@ formAddProduct.addEventListener("submit", async (e) => {
   e.target.reset();
 });
 
+
+// Завдання 4
+const deletionProductFormEl = document.querySelector('#deletionProductForm');
+
+deletionProductFormEl.addEventListener('submit', onDeleteFormSubmit);
+
+async function onDeleteFormSubmit(event){
+  event.preventDefault();
+
+  const id = event.target.elements.deletionId.value;
+  try{
+  const res = await productsApi.deleteProduct(id);
+  if(res.isDeleted){
+    alert(`${res.title} успішно видалено`)
+  } else {
+    alert(`${res.title} НЕ видалено!!!`)
+  }
+  }
+  catch(error){
+    console.log(error.message)
+  }
+  event.target.reset();
+}
 // productsApi.searchProductsByCategory('smartphones');
 // productsApi.filterProducts(5, 10, ['title', 'price']);
 // productsApi.getCategories();
